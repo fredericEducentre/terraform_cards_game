@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHP Game Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      width: 70mm;
+      height: 99mm;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+    .card-header {
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .card-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      font-size: 12px;
+      flex-grow: 1;
+      
+    }
+    .card-footer {
+      font-size: 10px;
+      text-align: center;
+      margin-top: 10px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="cards-container" id="cards-container" style="white-space: pre-line;">
+    <!-- Cards will be injected here -->
+  </div>
+
+  <script>
+    fetch('cards.json')
+      .then(response => response.json())
+      .then(cardsData => {
+        function createCard(card) {
+          const cardElement = document.createElement('div');
+          cardElement.className = 'card';
+
+          const header = document.createElement('div');
+          header.className = 'card-header';
+          header.textContent = `${card.type.toUpperCase()} #${card.numero}`;
+
+          const content = document.createElement('div');
+          content.className = 'card-content';
+          content.textContent = card.contenu;
+
+          cardElement.appendChild(header);
+          cardElement.appendChild(content);
+
+          return cardElement;
+        }
+
+        const cardsContainer = document.getElementById('cards-container');
+
+        cardsData.cards.forEach(card => {
+          const cardElement = createCard(card);
+          cardsContainer.appendChild(cardElement);
+        });
+      })
+      .catch(error => console.error('Erreur lors du chargement du fichier JSON:', error));
+  </script>
+</body>
+</html>

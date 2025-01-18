@@ -1,0 +1,500 @@
+{
+    "cards": [
+      {
+        "numero": 1,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que Terraform ? Terraform est un outil d'infrastructure en tant que code permettant de définir et de provisionner des infrastructures dans le cloud à l'aide d'une syntaxe déclarative."
+      },
+      {
+        "numero": 1,
+        "type": "example",
+        "contenu": "provider \"aws\" {\n  region = \"us-west-2\"\n}\nresource \"aws_instance\" \"example\" {\n  ami           = \"ami-0c55b159cbfafe1f0\"\n  instance_type = \"t2.micro\"\n}"
+      },
+      {
+        "numero": 1,
+        "type": "défi",
+        "contenu": "Expliquez comment Terraform est utilisé pour créer une machine virtuelle dans AWS en utilisant le fournisseur AWS."
+      },
+      {
+        "numero": 2,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce qu'un fournisseur (provider) dans Terraform ? Un fournisseur est un plugin utilisé par Terraform pour interagir avec des API spécifiques comme AWS, Azure, ou Google Cloud."
+      },
+      {
+        "numero": 2,
+        "type": "example",
+        "contenu": "provider \"google\" {\n  project = \"my-project-id\"\n  region  = \"us-central1\"\n}"
+      },
+      {
+        "numero": 2,
+        "type": "défi",
+        "contenu": "Configurez un fournisseur Google Cloud dans Terraform et expliquez les paramètres nécessaires."
+      },
+      {
+        "numero": 3,
+        "type": "connaissance",
+        "contenu": "Que sont les ressources dans Terraform ? Les ressources sont des objets que Terraform gère, comme des instances de machine virtuelle, des bases de données, ou des réseaux."
+      },
+      {
+        "numero": 3,
+        "type": "example",
+        "contenu": "resource \"aws_s3_bucket\" \"example\" {\n  bucket = \"my-tf-test-bucket\"\n  acl    = \"private\"\n}"
+      },
+      {
+        "numero": 3,
+        "type": "défi",
+        "contenu": "Créez une ressource S3 avec un nom unique et configurez des règles d'accès privées."
+      },
+      {
+        "numero": 4,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que le fichier state dans Terraform ? Le fichier state (terraform.tfstate) est utilisé par Terraform pour conserver l'état actuel de l'infrastructure qu'il gère."
+      },
+      {
+        "numero": 4,
+        "type": "example",
+        "contenu": "terraform {\n  backend \"s3\" {\n    bucket         = \"my-tf-state\"\n    key            = \"state/terraform.tfstate\"\n    region         = \"us-west-2\"\n  }\n}"
+      },
+      {
+        "numero": 4,
+        "type": "défi",
+        "contenu": "Configurez un backend distant pour stocker l'état de Terraform dans un bucket S3."
+      },
+      {
+        "numero": 5,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que le fichier variables.tf dans Terraform ? Il est utilisé pour définir des variables d'entrée qui peuvent être utilisées dans les configurations Terraform."
+      },
+      {
+        "numero": 5,
+        "type": "example",
+        "contenu": "variable \"instance_type\" {\n  description = \"Type d'instance AWS\"\n  default     = \"t2.micro\"\n}"
+      },
+      {
+        "numero": 5,
+        "type": "défi",
+        "contenu": "Créez un fichier variables.tf pour paramétrer le type d'instance et la région d'un fournisseur AWS."
+      },
+      {
+        "numero": 6,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que la commande terraform init ? Cette commande initialise un répertoire Terraform, télécharge les plugins nécessaires et prépare l'environnement."
+      },
+      {
+        "numero": 6,
+        "type": "example",
+        "contenu": "$ terraform init"
+      },
+      {
+        "numero": 6,
+        "type": "défi",
+        "contenu": "Exécutez terraform init dans un projet Terraform existant et expliquez ce qu'il fait."
+      },
+      {
+        "numero": 7,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que le plan d'exécution dans Terraform ? Il s'agit d'une étape où Terraform détermine les changements nécessaires pour atteindre l'état désiré."
+      },
+      {
+        "numero": 7,
+        "type": "example",
+        "contenu": "$ terraform plan"
+      },
+      {
+        "numero": 7,
+        "type": "défi",
+        "contenu": "Générez un plan d'exécution Terraform et décrivez les sorties."
+      },
+      {
+        "numero": 8,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que la commande terraform apply ? Elle applique les changements nécessaires pour atteindre l'état désiré spécifié dans le fichier de configuration."
+      },
+      {
+        "numero": 8,
+        "type": "example",
+        "contenu": "$ terraform apply"
+      },
+      {
+        "numero": 8,
+        "type": "défi",
+        "contenu": "Appliquez une configuration Terraform et expliquez les étapes et les résultats."
+      },
+      {
+        "numero": 9,
+        "type": "connaissance",
+        "contenu": "Comment fonctionne la commande terraform destroy ? Elle détruit toutes les ressources gérées par Terraform."
+      },
+      {
+        "numero": 9,
+        "type": "example",
+        "contenu": "$ terraform destroy"
+      },
+      {
+        "numero": 9,
+        "type": "défi",
+        "contenu": "Détruisez une infrastructure avec terraform destroy et expliquez son importance."
+      },
+      {
+        "numero": 10,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce qu'un module Terraform ? Un module est un ensemble de fichiers de configuration Terraform regroupés pour organiser et réutiliser le code."
+      },
+      {
+        "numero": 10,
+        "type": "example",
+        "contenu": "module \"vpc\" {\n  source = \"terraform-aws-modules/vpc/aws\"\n  name   = \"my-vpc\"\n  cidr   = \"10.0.0.0/16\"\n}"
+      },
+      {
+        "numero": 10,
+        "type": "défi",
+        "contenu": "Créez un module pour gérer une VPC avec des sous-réseaux et des passerelles NAT."
+      },
+      {
+        "numero": 11,
+        "type": "connaissance",
+        "contenu": "Que sont les outputs dans Terraform ? Les outputs sont utilisés pour exporter des valeurs des configurations Terraform."
+      },
+      {
+        "numero": 11,
+        "type": "example",
+        "contenu": "output \"instance_ip\" {\n  value = aws_instance.example.public_ip\n}"
+      },
+      {
+        "numero": 11,
+        "type": "défi",
+        "contenu": "Ajoutez un output pour afficher l'adresse IP publique d'une instance EC2."
+      },
+      {
+        "numero": 12,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce qu'un data source dans Terraform ? Il permet de récupérer des informations à partir de fournisseurs sans les créer."
+      },
+      {
+        "numero": 12,
+        "type": "example",
+        "contenu": "data \"aws_ami\" \"ubuntu\" {\n  most_recent = true\n  filter {\n    name   = \"name\"\n    values = [\"ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*\"]\n  }\n}"
+      },
+      {
+        "numero": 12,
+        "type": "défi",
+        "contenu": "Utilisez un data source pour récupérer l'AMI Ubuntu le plus récent."
+      },
+      {
+        "numero": 13,
+        "type": "connaissance",
+        "contenu": "Comment fonctionne le verrouillage de l'état dans Terraform ? Le verrouillage empêche plusieurs utilisateurs de modifier le même état simultanément."
+      },
+      {
+        "numero": 13,
+        "type": "example",
+        "contenu": "terraform {\n  backend \"s3\" {\n    bucket         = \"my-tf-state\"\n    key            = \"state/terraform.tfstate\"\n    region         = \"us-west-2\"\n    dynamodb_table = \"terraform-locks\"\n  }\n}"
+      },
+      {
+        "numero": 13,
+        "type": "défi",
+        "contenu": "Configurez un verrouillage d'état avec DynamoDB pour une infrastructure Terraform."
+      },
+      {
+        "numero": 14,
+        "type": "connaissance",
+        "contenu": "Que sont les workspaces dans Terraform ? Les workspaces permettent de gérer plusieurs états pour un même projet Terraform."
+      },
+      {
+        "numero": 14,
+        "type": "example",
+        "contenu": "$ terraform workspace new staging"
+      },
+      {
+        "numero": 14,
+        "type": "défi",
+        "contenu": "Créez et utilisez un workspace staging pour une configuration Terraform."
+      },
+      {
+        "numero": 15,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que terraform fmt ? Cette commande formate le code Terraform pour le rendre lisible et cohérent."
+      },
+      {
+        "numero": 15,
+        "type": "example",
+        "contenu": "$ terraform fmt"
+      },
+      {
+        "numero": 15,
+        "type": "défi",
+        "contenu": "Exécutez terraform fmt sur une configuration mal formatée et observez les changements."
+      },
+      {
+        "numero": 16,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que Terraform Cloud ? Terraform Cloud est une plateforme SaaS qui facilite l'exécution, la gestion et la collaboration autour des configurations Terraform."
+      },
+      {
+        "numero": 16,
+        "type": "example",
+        "contenu": "terraform login"
+      },
+      {
+        "numero": 16,
+        "type": "défi",
+        "contenu": "Connectez-vous à Terraform Cloud et explorez ses fonctionnalités de collaboration."
+      },
+      {
+        "numero": 17,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce qu'un backend dans Terraform ? Le backend détermine où et comment Terraform stocke l'état de l'infrastructure."
+      },
+      {
+        "numero": 17,
+        "type": "example",
+        "contenu": "terraform {\n  backend \"s3\" {\n    bucket = \"my-terraform-state\"\n    key    = \"state/terraform.tfstate\"\n    region = \"us-west-2\"\n  }\n}"
+      },
+      {
+        "numero": 17,
+        "type": "défi",
+        "contenu": "Configurez un backend S3 pour stocker l'état de votre projet Terraform."
+      },
+      {
+        "numero": 18,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que la commande terraform validate ? Cette commande vérifie la syntaxe et la validité des fichiers de configuration Terraform."
+      },
+      {
+        "numero": 18,
+        "type": "example",
+        "contenu": "$ terraform validate"
+      },
+      {
+        "numero": 18,
+        "type": "défi",
+        "contenu": "Validez une configuration Terraform pour vérifier la présence d'éventuelles erreurs."
+      },
+      {
+        "numero": 19,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce qu'un fichier .tfvars ? C'est un fichier où les variables Terraform peuvent être définies pour personnaliser les configurations."
+      },
+      {
+        "numero": 19,
+        "type": "example",
+        "contenu": "instance_type = \"t2.micro\"\nregion = \"us-west-2\""
+      },
+      {
+        "numero": 19,
+        "type": "défi",
+        "contenu": "Créez un fichier .tfvars et chargez-le dans votre configuration Terraform."
+      },
+      {
+        "numero": 20,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce qu'une variable dans Terraform ? Une variable permet de paramétrer une configuration Terraform de manière flexible."
+      },
+      {
+        "numero": 20,
+        "type": "example",
+        "contenu": "variable \"region\" {\n  type    = string\n  default = \"us-west-2\"\n}"
+      },
+      {
+        "numero": 20,
+        "type": "défi",
+        "contenu": "Créez une variable de type chaîne pour la région AWS dans votre configuration Terraform."
+      },
+      {
+        "numero": 21,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce qu'un provider de type \"null\" dans Terraform ? Le provider null permet de créer des ressources fictives ou d'effectuer des actions sans infrastructure réelle."
+      },
+      {
+        "numero": 21,
+        "type": "example",
+        "contenu": "resource \"null_resource\" \"example\" {\n  triggers = { \"always_run\" = \"$(date)\" }\n}"
+      },
+      {
+        "numero": 21,
+        "type": "défi",
+        "contenu": "Créez une ressource de type null qui génère un déclencheur basé sur la date."
+      },
+      {
+        "numero": 22,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que la commande terraform refresh ? Cette commande synchronise l'état actuel des ressources avec celles définies dans les configurations Terraform."
+      },
+      {
+        "numero": 22,
+        "type": "example",
+        "contenu": "$ terraform refresh"
+      },
+      {
+        "numero": 22,
+        "type": "défi",
+        "contenu": "Exécutez terraform refresh pour synchroniser l'état de vos ressources avec les dernières modifications."
+      },
+      {
+        "numero": 23,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce qu'un resource block dans Terraform ? Un resource block définit une ressource spécifique que Terraform gère, comme une instance EC2 ou un bucket S3."
+      },
+      {
+        "numero": 23,
+        "type": "example",
+        "contenu": "resource \"aws_instance\" \"example\" {\n  ami           = \"ami-0c55b159cbfafe1f0\"\n  instance_type = \"t2.micro\"\n}"
+      },
+      {
+        "numero": 23,
+        "type": "défi",
+        "contenu": "Créez un bloc de ressource pour une instance EC2 avec un ami et un type d'instance spécifiques."
+      },
+      {
+        "numero": 24,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que la commande terraform output ? Cette commande affiche les valeurs des outputs définis dans la configuration Terraform."
+      },
+      {
+        "numero": 24,
+        "type": "example",
+        "contenu": "$ terraform output instance_ip"
+      },
+      {
+        "numero": 24,
+        "type": "défi",
+        "contenu": "Exécutez terraform output pour afficher une valeur de sortie définie dans votre configuration."
+      },
+      {
+        "numero": 25,
+        "type": "connaissance",
+        "contenu": "Que signifie la commande terraform taint ? Elle marque une ressource pour qu'elle soit détruite et recréée lors de la prochaine application."
+      },
+      {
+        "numero": 25,
+        "type": "example",
+        "contenu": "$ terraform taint aws_instance.example"
+      },
+      {
+        "numero": 25,
+        "type": "défi",
+        "contenu": "Utilisez terraform taint pour marquer une instance pour une destruction et recréation."
+      },
+      {
+        "numero": 26,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que la commande terraform state ? Elle permet de gérer l'état des ressources dans Terraform, comme lister, supprimer ou modifier des ressources."
+      },
+      {
+        "numero": 26,
+        "type": "example",
+        "contenu": "$ terraform state list"
+      },
+      {
+        "numero": 26,
+        "type": "défi",
+        "contenu": "Listez toutes les ressources de votre projet Terraform avec terraform state list."
+      },
+      {
+        "numero": 27,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce qu'un fichier de configuration principal dans Terraform ? C'est le fichier où les ressources, variables et autres éléments sont définis pour l'infrastructure."
+      },
+      {
+        "numero": 27,
+        "type": "example",
+        "contenu": "provider \"aws\" {\n  region = \"us-west-2\"\n}\nresource \"aws_instance\" \"example\" {\n  ami           = \"ami-0c55b159cbfafe1f0\"\n  instance_type = \"t2.micro\"\n}"
+      },
+      {
+        "numero": 27,
+        "type": "défi",
+        "contenu": "Créez un fichier de configuration principal pour déployer une instance EC2."
+      },
+      {
+        "numero": 28,
+        "type": "connaissance",
+        "contenu": "Que sont les expressions dans Terraform ? Les expressions permettent de calculer des valeurs à partir des variables ou des ressources."
+      },
+      {
+        "numero": 28,
+        "type": "example",
+        "contenu": "instance_type = \"t2.${var.size}\""
+      },
+      {
+        "numero": 28,
+        "type": "défi",
+        "contenu": "Utilisez une expression pour combiner une variable et une chaîne de texte dans une configuration Terraform."
+      },
+      {
+        "numero": 29,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que la fonction count dans Terraform ? La fonction count permet de dupliquer une ressource un certain nombre de fois."
+      },
+      {
+        "numero": 29,
+        "type": "example",
+        "contenu": "resource \"aws_instance\" \"example\" {\n  count = 3\n  ami           = \"ami-0c55b159cbfafe1f0\"\n  instance_type = \"t2.micro\"\n}"
+      },
+      {
+        "numero": 29,
+        "type": "défi",
+        "contenu": "Créez plusieurs instances EC2 en utilisant la fonction count."
+      },
+      {
+        "numero": 30,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que la fonction depends_on dans Terraform ? La fonction depends_on permet de forcer Terraform à exécuter une ressource après une autre."
+      },
+      {
+        "numero": 30,
+        "type": "example",
+        "contenu": "resource \"aws_security_group\" \"example\" {\n  name = \"example\"\n}\nresource \"aws_instance\" \"example\" {\n  depends_on = [aws_security_group.example]\n  ami = \"ami-0c55b159cbfafe1f0\"\n}"
+      },
+      {
+        "numero": 30,
+        "type": "défi",
+        "contenu": "Utilisez depends_on pour s'assurer qu'une instance EC2 est lancée après un groupe de sécurité."
+      },
+      {
+        "numero": 31,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce qu'une expression conditionnelle dans Terraform ? C'est une expression qui permet de choisir une valeur parmi plusieurs en fonction d'une condition."
+      },
+      {
+        "numero": 31,
+        "type": "example",
+        "contenu": "instance_type = var.is_large ? \"t2.large\" : \"t2.micro\""
+      },
+      {
+        "numero": 31,
+        "type": "défi",
+        "contenu": "Utilisez une expression conditionnelle pour définir le type d'instance en fonction d'une variable."
+      },
+      {
+        "numero": 32,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce qu'un fournisseur de type \"random\" dans Terraform ? Le provider random génère des valeurs aléatoires pour des variables comme des mots de passe ou des identifiants uniques."
+      },
+      {
+        "numero": 32,
+        "type": "example",
+        "contenu": "resource \"random_pet\" \"example\" {\n  length = 2\n}"
+      },
+      {
+        "numero": 32,
+        "type": "défi",
+        "contenu": "Créez une ressource random pour générer un nom aléatoire."
+      },
+      {
+        "numero": 33,
+        "type": "connaissance",
+        "contenu": "Qu'est-ce que la fonction local-exec dans Terraform ? Elle permet d'exécuter des commandes locales à partir de la machine où Terraform est exécuté."
+      },
+      {
+        "numero": 33,
+        "type": "example",
+        "contenu": "resource \"null_resource\" \"example\" {\n  provisioner \"local-exec\" {\n    command = \"echo Hello, World!\"\n  }\n}"
+      },
+      {
+        "numero": 33,
+        "type": "défi",
+        "contenu": "Utilisez local-exec pour exécuter une commande shell sur votre machine après la création d'une ressource."
+      }
+    ]
+  }
+  
